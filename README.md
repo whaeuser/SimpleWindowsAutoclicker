@@ -1,13 +1,13 @@
 # Simple Windows Autoclicker
 
-Ein minimalistisches Python-Tool für Windows, das zwei Tasten dauerhaft im Wechsel drückt.
+Ein minimalistisches Python-Tool für Windows, das zwei Tasten dauerhaft gedrückt hält.
 
 ## Features
 
-- ⌨️ Drückt zwei konfigurierbare Tasten im Wechsel
-- ⚡ Einstellbare Verzögerung
+- ⌨️ Hält zwei konfigurierbare Tasten dauerhaft gedrückt
 - 🛑 Stoppen mit ESC oder Strg+C
 - 🐍 Einfaches Python-Script ohne GUI
+- ✅ Tasten werden automatisch losgelassen beim Beenden
 
 ## Installation
 
@@ -50,12 +50,11 @@ python autoclicker.py
 
 ```python
 KEY1 = 'w'          # Erste Taste
-KEY2 = 'space'      # Zweite Taste
-DELAY = 0.05        # Verzögerung in Sekunden (50ms)
+KEY2 = 's'          # Zweite Taste
 ```
 
 ### Verfügbare Tasten
-- Buchstaben: `'a'`, `'b'`, `'w'`, etc.
+- Buchstaben: `'a'`, `'b'`, `'w'`, `'s'`, etc.
 - Zahlen: `'0'`, `'1'`, `'2'`, etc.
 - Spezialstasten: `'space'`, `'enter'`, `'shift'`, `'ctrl'`, `'alt'`
 - Funktionstasten: `'f1'`, `'f2'`, etc.
@@ -64,25 +63,28 @@ Siehe [keyboard Dokumentation](https://github.com/boppreh/keyboard#api) für all
 
 ## Beispiele
 
-### Gaming: W + Space
+### Standard: W + S (vorwärts + rückwärts)
+```python
+KEY1 = 'w'
+KEY2 = 's'
+```
+
+### Gaming: W + Space (vorwärts + springen)
 ```python
 KEY1 = 'w'
 KEY2 = 'space'
-DELAY = 0.05
 ```
 
-### Farming: Left Click + E
+### Strafing: A + D (links + rechts)
 ```python
-KEY1 = 'left'      # Linke Maustaste
-KEY2 = 'e'
-DELAY = 0.1
+KEY1 = 'a'
+KEY2 = 'd'
 ```
 
-### Auto-Jump: Space dauerhaft
+### Shift-Laufen: W + Shift
 ```python
-KEY1 = 'space'
-KEY2 = 'space'
-DELAY = 0.5
+KEY1 = 'w'
+KEY2 = 'shift'
 ```
 
 ## Troubleshooting
